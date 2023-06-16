@@ -8,7 +8,9 @@ import * as express from "express";
 export class ChatController {
     constructor() {}
 
-    async chatConversation(messages: ChatCompletionRequestMessage[], res: express.Response) {
+    async chatConversation(
+      messages: ChatCompletionRequestMessage[],
+      res: express.Response) {
       const completion = await openaiClient.createChatCompletion({
         model: OpenAIModels.GPT_3_5_TURBO,
         messages: messages,
